@@ -7,27 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */; };
 		A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9CBC31943C2540017F096 /* AppDelegate.swift */; };
 		A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D9CBCA1943C2540017F096 /* Main.storyboard */; };
 		A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D9CBCD1943C2540017F096 /* Images.xcassets */; };
-		A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */; };
-		A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E767C5194594DC00869113 /* ToDoItemViewController.swift */; };
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
 		CF1675951DA2E400007BDC7F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1675941DA2E400007BDC7F /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A2BD20961AC8A731007F7181 /* QSTodoDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QSTodoDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A2D9CBBE1943C2540017F096 /* Falcon Tutors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Falcon Tutors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D9CBC21943C2540017F096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2D9CBC31943C2540017F096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D9CBCB1943C2540017F096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2D9CBCD1943C2540017F096 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		A2D9CBE81943D1340017F096 /* Tutor_Finder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tutor_Finder-Bridging-Header.h"; sourceTree = "<group>"; };
-		A2E767C5194594DC00869113 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		CF1675941DA2E400007BDC7F /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -64,14 +58,11 @@
 		A2D9CBC01943C2540017F096 /* Tutor_Finder */ = {
 			isa = PBXGroup;
 			children = (
-				A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */,
 				A2D9CBC31943C2540017F096 /* AppDelegate.swift */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
-				A2D9CBC11943C2540017F096 /* Supporting Files */,
 				CF1675941DA2E400007BDC7F /* PickerViewController.swift */,
-				A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */,
-				A2E767C5194594DC00869113 /* ToDoItemViewController.swift */,
+				A2D9CBC11943C2540017F096 /* Supporting Files */,
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Tutor_Finder-Bridging-Header.h */,
 				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
@@ -171,9 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1675951DA2E400007BDC7F /* PickerViewController.swift in Sources */,
-				A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */,
-				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
-				A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,19 +334,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A2BD20961AC8A731007F7181 /* QSTodoDataModel.xcdatamodel */,
-			);
-			currentVersion = A2BD20961AC8A731007F7181 /* QSTodoDataModel.xcdatamodel */;
-			path = QSTodoDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A2D9CBB61943C2540017F096 /* Project object */;
 }

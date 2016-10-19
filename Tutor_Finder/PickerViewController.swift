@@ -6,34 +6,45 @@
 //  Copyright © 2016 Microsoft. All rights reserved.
 //
 
+
 import Foundation
 import UIKit
-import CoreData
 
-class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate {
+class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // OUTLETS
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var coursePickerView: UIPickerView!
     @IBOutlet weak var goButton: UIButton!
     
-    // SERVER CONTROLS
-    
-    lazy var fetchedResultController: NSFetchedResultsController = {
-        let fetchRequest = NSFetchRequest(entityName: "Courses")
-        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
-        
-        let resultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        
-        resultsController.delegate = self;
-        
-        return resultsController
-    }()
-    
+    // VARIABLES
+    var courseRow = 0
+    // ** Manually set to AC 310 by default to account for immediate "Go" clicks **
+    var deptName:String! = "AC"
+    var courseName:String! = "310"
+    var course:String! = "AC 310"
+    var alertController = UIAlertController(title: "Tutor Center", message: "Description", preferredStyle: .Alert)
+    var tutorCenter:String? = "Tutor Center" {
+        didSet{
+            if tutorCenter == "" {
+                alertController = UIAlertController(title: "Sorry!",
+                    message: "No lab tutors \(course), try contacting your professor.",
+                    preferredStyle: .Alert)
+            } else {
+                alertController = UIAlertController(title: tutorCenter,
+                    message: "This lab tutors \(course).",
+                    preferredStyle: .Alert)
+            }
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
     
     // PICKER SOURCES
     var pickerDataSource = ["AC","AF","CDI","CIN","COM","CS","EC","EMS","EXP","FI","GB","GLS","HI","IDCC","IPM","IT","LA","LIT","MA","MC","MG","MK","MLCH","MLFR","MLIT","MLJA","MLSP","NASC","NASE","PH","PS","PRS","SO"];
-    var coursePickerDataSource = ["310","311","312","331","332","340","350","381","412","421","470"];     // Manually set to pickerDataSource row 1 values
+    var coursePickerDataSource = ["310","311","312","331","332","340","350","381","412","421","470"];
+    // Manually set to pickerDataSource row 1 values
     
     // VIEW DID LOAD
     override func viewDidLoad() {
@@ -42,7 +53,6 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.pickerView.delegate = self;
         self.coursePickerView.dataSource = self;
         self.coursePickerView.delegate = self;
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -239,22 +249,42 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 coursePickerDataSource = ["132","225","285","289","292","299","300","320"];
                 coursePickerView.reloadAllComponents()
             }
+            
+            deptName = pickerDataSource[row]
+            if courseRow > coursePickerDataSource.count {
+                courseName = coursePickerDataSource[coursePickerDataSource.count-1]
+            } else {
+            courseName = coursePickerDataSource[courseRow]
+            }
         }
+        
+        if pickerView.tag == 2 {
+            courseName = coursePickerDataSource[row]
+            courseRow = row
+        }
+        
+        course = deptName + " " + courseName
+        print(course)
+        
     }
     
     @IBAction func goButtonPressed(sender: AnyObject) {
         let client = MSClient(applicationURLString: "https://tutor-finder.azurewebsites.net")
-        let table = client.tableWithName("Courses")
-        let query = table.query()
-        query.orderByDescending("courseID")
+        let table = client.tableWithName("TC_Relation")
+        let query = table.queryWithPredicate(NSPredicate(format: "CourseID == '\(course)'"))
         query.readWithCompletion { (result, error) in
             if let err = error {
                 print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
-                    print("Course: ", item["courseID"])
+                    print(item["TutorCenterID"] as! String)
+                    self.tutorCenter = (item["TutorCenterID"] as! String)
+                    print(self.tutorCenter)
                 }
             }
         }
+
     }
+
 }
+
