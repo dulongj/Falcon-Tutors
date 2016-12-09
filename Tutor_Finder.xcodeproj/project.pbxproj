@@ -13,6 +13,10 @@
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
 		CF1675951DA2E400007BDC7F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1675941DA2E400007BDC7F /* PickerViewController.swift */; };
+		CF21128B1DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF2112891DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodeld */; };
+		CF8491871DF0AF9D004B3B91 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8491861DF0AF9D004B3B91 /* SearchViewController.swift */; };
+		CF8491891DF0B0CD004B3B91 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8491881DF0B0CD004B3B91 /* Search.swift */; };
+		CF84918B1DF0B179004B3B91 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84918A1DF0B179004B3B91 /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		CF1675941DA2E400007BDC7F /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		CF21128A1DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QSTodoDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CF8491861DF0AF9D004B3B91 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CF8491881DF0B0CD004B3B91 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		CF84918A1DF0B179004B3B91 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				A2D9CBC31943C2540017F096 /* AppDelegate.swift */,
+				CF1675941DA2E400007BDC7F /* PickerViewController.swift */,
+				CF8491861DF0AF9D004B3B91 /* SearchViewController.swift */,
+				CF8491881DF0B0CD004B3B91 /* Search.swift */,
+				CF84918A1DF0B179004B3B91 /* SearchCell.swift */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
-				CF1675941DA2E400007BDC7F /* PickerViewController.swift */,
+				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
+				A2D9CBE81943D1340017F096 /* Tutor_Finder-Bridging-Header.h */,
+				CF2112891DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodeld */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
 				A2D9CBE51943CB520017F096 /* frameworks */,
-				A2D9CBE81943D1340017F096 /* Tutor_Finder-Bridging-Header.h */,
-				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
 			);
 			path = Tutor_Finder;
 			sourceTree = "<group>";
@@ -162,7 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1675951DA2E400007BDC7F /* PickerViewController.swift in Sources */,
+				CF84918B1DF0B179004B3B91 /* SearchCell.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
+				CF8491891DF0B0CD004B3B91 /* Search.swift in Sources */,
+				CF8491871DF0AF9D004B3B91 /* SearchViewController.swift in Sources */,
+				CF21128B1DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +350,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF2112891DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF21128A1DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodel */,
+			);
+			currentVersion = CF21128A1DEDEDA000AC4D6C /* QSTodoDataModel.xcdatamodel */;
+			path = QSTodoDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A2D9CBB61943C2540017F096 /* Project object */;
 }
